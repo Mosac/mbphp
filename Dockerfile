@@ -1,4 +1,4 @@
-FROM php:5.4-apache
+FROM php:5.6-apache
 
 LABEL maintainer="Mosac"
 
@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   libbz2-dev \
   libpng-dev \
   imagemagick \
+  libmagickwand-dev \
   libxslt-dev \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/* \
