@@ -27,8 +27,8 @@ RUN pecl install -o -f redis \
     && rm -rf /tmp/pear
 
 RUN docker-php-ext-configure imap --with-imap --with-imap-ssl --with-kerberos \
-  && docker-php-ext-install imap intl mbstring mcrypt mysqli pdo_mysql zip bz2 calendar exif ftp gd gettext pcntl shmop sockets sysvmsg sysvsem sysvshm wddx xsl  \
-  && docker-php-ext-enable redis imap intl mbstring mcrypt mysqli pdo_mysql zip bz2 calendar exif ftp gd gettext pcntl shmop sockets sysvmsg sysvsem sysvshm wddx xsl
+  && docker-php-ext-install opcache imap intl mbstring mcrypt mysqli pdo_mysql zip bz2 calendar exif ftp gd gettext pcntl shmop sockets sysvmsg sysvsem sysvshm wddx xsl  \
+  && docker-php-ext-enable opcache redis imap intl mbstring mcrypt mysqli pdo_mysql zip bz2 calendar exif ftp gd gettext pcntl shmop sockets sysvmsg sysvsem sysvshm wddx xsl
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
